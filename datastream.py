@@ -20,14 +20,6 @@ def generate_output(monitor_data):
     print("Last update:", str(datetime.now())[:-7], "\n")
     headings = ["AP Name", "Slot", "Radio", "Ch.Util %", "Clients", "Ch.Changes", "Last Ch.Change"]
     print(tabulate(monitor_data, headers=headings))
-    #print(f" {'AP Name':10} {'Slot':>10} {'Ch. Util':>10} {'Clients':>10}")
-    #for bssid in sorted(ap, key=lambda x: ap[x]['RSSI'], reverse=True):
-    #print(monitor_data)
-    #for ap in sorted(monitor_data, key=lambda x: list(monitor_data.values())[0]["1"]["clients"]):
-    #    print(type(ap))
-    #print('END')
-
-
 
 
 @data_stream.route('/monitor', methods = ['POST'])

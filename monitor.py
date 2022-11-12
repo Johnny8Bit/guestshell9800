@@ -3,6 +3,7 @@ import requests
 import urllib3
 import time
 import json
+import sys
 import re
 import cli
 
@@ -49,14 +50,17 @@ def parse_output(cli_output):
 
 while True:
 
-    output = parse_output(cli.cli(f"show ap auto-rf dot11 5ghz | include {include}").split("AP Name"))
-    output_sorted = sorted(output, key=lambda x: x[3], reverse=True)[0:send_top] #sort by ch.util
     try:
-        post = requests.post(monitor_api, data=json.dumps(output_sorted), verify=False, timeout=2)
-        print(monitor_ip, post.status_code)
-    except requests.exceptions.ConnectTimeout:
-        print(monitor_ip, "Timeout")
-    except requests.exceptions.ConnectionError:
-        print(monitor_ip, "Connection error")
-    time.sleep(5)
+        output = parse_output(cli.cli(f"show ap auto-rf dot11 5ghz | include {include}").split("AP Name"))
+        output_sorted = sorted(output, key=lambda x: x[3], reverse=True)[0:send_top] #sort by ch.util
+        try:
+            post = requests.post(monitor_api, data=json.dumps(output_sorted), verify=False, timeout=2)
+            print(monitor_ip, post.status_code)
+        except requests.exceptions.ConnectTimeout:
+            print(monitor_ip, "Timeout")
+        except requests.exceptions.ConnectionError:
+            print(monitor_ip, "Connection error")
+        time.sleep(5)
+    except KeyboardInterrupt:
+        sys.exit()
 
