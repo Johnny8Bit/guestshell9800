@@ -1,8 +1,11 @@
+from datetime import datetime
+
+import json
+import os
+
 from flask import Flask
 from flask import request
 from tabulate import tabulate
-import json
-import os
 
 import logging
 log = logging.getLogger('werkzeug')
@@ -14,6 +17,7 @@ data_stream = Flask(__name__)
 def generate_output(monitor_data):
 
     os.system("cls")
+    print("Last update:", str(datetime.now())[:-7], "\n")
     headings = ["AP Name", "Slot", "Radio", "Ch.Util %", "Clients", "Ch.Changes", "Last Ch.Change"]
     print(tabulate(monitor_data, headers=headings))
     #print(f" {'AP Name':10} {'Slot':>10} {'Ch. Util':>10} {'Clients':>10}")
