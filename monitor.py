@@ -26,37 +26,37 @@ while True:
         ap_metrics = []
         try:
             ap_name = re.match("\s+: (\S+)", ap_data).group(1)
-            ap_metrics.append(ap_name)
+        #    ap_metrics.append(ap_name)
         except AttributeError:
             continue
         ap_slot = re.search("Slot ID\s+: (\S+)", ap_data).group(1)
-        ap_metrics.append(ap_slot)
+        #ap_metrics.append(ap_slot)
 
         ap_radio = re.search("Radio Type\s+: (.+)", ap_data).group(1)
-        ap_metrics.append(ap_radio)
+        #ap_metrics.append(ap_radio)
 
         ap_chutil = re.search("Channel Utilization\s+: (\S+)", ap_data).group(1)
         ap_chutil = int(ap_chutil[:-1])
-        ap_metrics.append(ap_chutil)
+        #ap_metrics.append(ap_chutil)
 
         ap_clients = re.search("Attached Clients\s+: (\S+)", ap_data).group(1)
-        ap_metrics.append(ap_clients)
+        #ap_metrics.append(ap_clients)
 
         try:
             ap_changes = re.search("Channel Change Count\s+: (.+)", ap_data).group(1)
         except AttributeError:
             ap_changes = "-"
-        finally:
-            ap_metrics.append(ap_changes)
+        #finally:
+        #    ap_metrics.append(ap_changes)
 
         try:
             ap_lastchange = re.search("Last Channel Change Time\s+: (.+)", ap_data).group(1)
         except AttributeError:
             ap_lastchange = "-"
-        finally:
-            ap_metrics.append(ap_lastchange)
+        #finally:
+        #    ap_metrics.append(ap_lastchange)
 
-        
+        ap_metrics=(ap_name, ap_slot, ap_radio, ap_chutil, ap_clients, ap_changes, ap_lastchange)
         monitor_data.append(ap_metrics)
 
     monitor_data = sorted(monitor_data, key=lambda x: x[3], reverse=True)[0:send_top] #sort by ch.util
