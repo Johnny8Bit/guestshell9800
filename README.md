@@ -1,4 +1,4 @@
-Streams RF statistics from 9800 guestshell to external system
+Streams RF statistics from Cisco 9800 guestshell to external system
 -------------------------------------------------------------
 
 Collects " sh ap auto-rf dot11 5ghz" output.
