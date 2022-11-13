@@ -41,7 +41,7 @@ Notes:
 
 1. Guestshell requires DNS, add nameserver to /etc/resolv.conf
 2. Use yum to install git, nano (optional)
-3. Use pip to install requirments
+3. Use pip to install requirements
 4. Disable logging for CLI library, by setting LOGFILE = None in CLI init
 (/usr/lib/python3.6/site-packages/cli/__init__.py)
 4. Clone this repository to WLC (https://github.com/Johnny8Bit/datastream9800)
