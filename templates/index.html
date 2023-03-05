@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/skeleton.css">
+    <meta http-equiv="refresh" content="5">
+</head>
+<body>
+
+<h5>Guestshell Web Monitor</h5>
+<table class="u-full-width">
+    <thead>
+      <tr>
+        <th>AP Name</th>
+        <th>Slot</th>
+        <th>Radio</th>
+        <th>Ch. Util. %</th>
+        <th>Clients</th>
+        <th>Ch. Changes</th>
+        <th>Last Ch. Change</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in data_list %}
+      <tr>
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
+        <td>{{ item[2] }}</td>
+        <td>{{ item[3] }}</td>
+        <td>{{ item[4] }}</td>
+        <td>{{ item[5] }}</td>
+        <td>{{ item[6] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html> 
