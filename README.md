@@ -60,7 +60,7 @@ WLC9800#guestshell
 [guestshell@guestshell ~]$ cd /home/guestshell/guestshell9800/
 [guestshell@guestshell guestshell9800]$ python3 datastream.py
 ```
-
+and
 ```
 @debian:~/guestshell9800$ python3 textmonitor.py
 ```
