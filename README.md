@@ -27,7 +27,7 @@ Requirements:
 - tabulate
 
 **webmonitor.py**
-Flask app receives and displays statistics in web interface
+Flask app receives and displays statistics in web interface, tested on Windows 11 & Debian 11
 
 Requirements:
 - flask
