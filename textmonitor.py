@@ -12,7 +12,7 @@ import logging
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
-data_stream = Flask(__name__)
+text_monitor = Flask(__name__)
 
 
 def generate_output(monitor_data):
@@ -24,7 +24,7 @@ def generate_output(monitor_data):
     print(tabulate(monitor_data, headers=headings))
 
 
-@data_stream.route('/monitor', methods = ['POST'])
+@text_monitor.route('/monitor', methods = ['POST'])
 def visualize():
 
     generate_output(json.loads(request.data))
@@ -34,4 +34,4 @@ def visualize():
 if __name__ == '__main__':
 
     platform = sys.platform
-    data_stream.run(host='0.0.0.0', port=9800, ssl_context='adhoc', debug=False)
+    text_monitor.run(host='0.0.0.0', port=80, debug=False)

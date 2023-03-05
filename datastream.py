@@ -12,8 +12,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 send_top = 20
 
 monitor_ip = "192.168.1.6"
-monitor_port = "9800"
-monitor_api = f"https://{monitor_ip}:{monitor_port}/monitor"
+monitor_port = "80"
+monitor_api = f"http://{monitor_ip}:{monitor_port}/monitor"
 
 include = "AP Name|Slot ID|Radio Type|Channel Utilization|Attached Clients|Channel Change Count|Last Channel Change Time"
 
