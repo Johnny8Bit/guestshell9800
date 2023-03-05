@@ -11,7 +11,7 @@ Sends:
 - Number of channel changes
 - Last channel change
 
-**monitor.py**
+**datastream.py**
 CLI command runner and parser, runs on 9800 WLC
 
 Requirements:
@@ -19,12 +19,18 @@ Requirements:
 - cli (Cisco : pre-installed)
 
 
-**datastream.py**
+**textmonitor.py**
 Flask app receives and displays statistics in console, tested on Windows 11 & Debian 11
 
 Requirements:
 - flask
 - tabulate
+
+**webmonitor.py**
+Flask app receives and displays statistics in web interface
+
+Requirements:
+- flask
 
 Installation 9800
 -----------------
@@ -44,19 +50,23 @@ Notes:
 3. Use pip to install requirements
 4. Disable logging for CLI library, by setting LOGFILE = None in CLI init
 (/usr/lib/python3.6/site-packages/cli/__init__.py)
-4. Clone this repository to WLC (https://github.com/Johnny8Bit/datastream9800)
-5. Edit IP address of receiving station in **monitor.py**
+4. Clone this repository to WLC (https://github.com/Johnny8Bit/guestshell9800)
+5. Edit IP address of receiving station in **datastream.py**
 
 Run
 ---
 ```
 WLC9800#guestshell
-[guestshell@guestshell ~]$ cd datastream9800/
-[guestshell@guestshell datastream9800]$ python3 monitor.py
+[guestshell@guestshell ~]$ cd /home/guestshell/guestshell9800/
+[guestshell@guestshell datastream9800]$ python3 datastream.py
 ```
 
 ```
-@debian:~/datastream9800$ python3 datastream.py
+@debian:~/guestshell9800$ python3 textmonitor.py
+```
+or
+```
+@debian:~/guestshell9800$ python3 webmonitor.py
 ```
 
 Sample output
