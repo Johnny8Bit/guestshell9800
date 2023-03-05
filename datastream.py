@@ -10,6 +10,7 @@ import cli
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 send_top = 20
+refresh_rate = 5
 
 monitor_ip = "192.168.1.6"
 monitor_port = "80"
@@ -60,7 +61,7 @@ while True:
             print(monitor_ip, "Timeout")
         except requests.exceptions.ConnectionError:
             print(monitor_ip, "Connection error")
-        time.sleep(5)
+        time.sleep(refresh_rate)
     except KeyboardInterrupt:
         sys.exit()
 
