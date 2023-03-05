@@ -49,7 +49,7 @@ Notes:
 2. Use yum to install git, nano (optional)
 3. Use pip to install requirements
 4. Disable logging for CLI library, by setting LOGFILE = None in CLI init
-(/usr/lib/python3.6/site-packages/cli/__init__.py)
+(/usr/lib/python3.6/site-packages/cli/\_\_init\_\_.py)
 4. Clone this repository to WLC (https://github.com/Johnny8Bit/guestshell9800)
 5. Edit IP address of receiving station in **datastream.py**
 
