@@ -58,7 +58,7 @@ Run
 ```
 WLC9800#guestshell
 [guestshell@guestshell ~]$ cd /home/guestshell/guestshell9800/
-[guestshell@guestshell datastream9800]$ python3 datastream.py
+[guestshell@guestshell guestshell9800]$ python3 datastream.py
 ```
 
 ```
